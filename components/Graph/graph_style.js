@@ -1,0 +1,251 @@
+import { StyleSheet } from 'react-native';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
+import config from '../../config';
+
+const { colors, fonts } = config;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  yAxisContainer: {
+    flex: 0.4,
+    alignItems: 'center',
+  },
+  yAxisStyle: {
+    width: wp(9),
+    height: hp(4.28),
+    backgroundColor: colors.white,
+    marginTop: hp(5.85),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+    shadowColor: colors.black,
+    shadowOffset: { width: 10, height: 10 },
+    shadowOpacity: 1,
+    fontSize: fonts[20],
+    transform: [{ rotate: '-90deg' }],
+  },
+  buttonContainer: {
+    flex: 8.4,
+    flexDirection: 'column',
+  },
+  legendContainer: {
+    flex: 0.8,
+    justifyContent: 'flex-end',
+  },
+  legend: {
+    height: hp(4.4),
+    width: wp(11),
+    marginLeft: wp(10),
+    backgroundColor: colors.white,
+    borderRadius: 5,
+    shadowColor: colors.black,
+    shadowOffset: { width: 10, height: 10 },
+    shadowOpacity: 1,
+    fontSize: fonts[16],
+  },
+  graphContainer: {
+    flex: 8,
+  },
+  tooltipStyles: {
+    fontSize: fonts[16],
+  },
+  xAxisContainer: {
+    flex: 1,
+  },
+  xAxisStyle: {
+    height: hp(4.28),
+    width: wp(9),
+    backgroundColor: colors.white,
+    marginRight: wp(2.5),
+    alignSelf: 'flex-end',
+    borderRadius: 5,
+    shadowColor: colors.black,
+    shadowOffset: { width: 10, height: 10 },
+    shadowOpacity: 1,
+  },
+  toolsContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  sensorItem: {
+    paddingBottom: hp(1.5),
+    borderBottomColor: colors.lightGrey2,
+    borderBottomWidth: 1,
+    paddingTop: hp(1.5),
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  mainwrapper: {
+    display: 'flex',
+    flex: 1,
+    backgroundColor: 'white',
+    width: wp(15),
+  },
+  modalTextStyle: {
+    fontSize: fonts[18],
+  },
+  modalIdStyle: {
+    fontSize: fonts[16],
+    marginLeft: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: hp(0.28),
+  },
+  parameterBody: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    maxHeight: hp(60),
+    display: 'flex',
+    flex: 1,
+  },
+  axisSelector: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+  },
+  legendView: {
+    width: '100%',
+    display: 'flex',
+    padding: 2,
+    flexWrap: 'wrap',
+  },
+  legendElement: {
+    display: 'flex',
+    flexDirection: 'row',
+    paddingBottom: hp(1),
+    paddingTop: hp(1),
+    width: '100%',
+  },
+  coloredElement: {
+    width: 20,
+    height: 5,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  checkboxStyle: {
+    display: 'flex',
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textView: {
+    display: 'flex',
+    flex: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  elementView: {
+    display: 'flex',
+    flex: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  toolText: {
+    color: colors.white,
+    fontWeight: 'bold',
+    fontSize: fonts[20],
+  },
+  optionStyle: {
+    marginTop: hp(0.71),
+    marginBottom: hp(0.71),
+    marginLeft: wp(1),
+    marginRight: wp(1),
+    justifyContent: 'center',
+    alignContent: 'center',
+    paddingTop: hp(1),
+    paddingBottom: hp(1),
+  },
+  settingModal: {
+    padding: 10,
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  lableStyle: {
+    fontSize: fonts[20],
+    marginTop: 5,
+  },
+  zoomSettingsView: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    width: wp(15),
+    height: hp(5),
+  },
+  zoomDimensionButton: {
+    backgroundColor: colors.white,
+    display: 'flex',
+    flex: 3.3,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  slopeContent: {
+    display: 'flex',
+    flex: 1,
+    width: hp(30),
+    minHeight: hp(20),
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    padding: 20,
+  },
+  slopeInfoTextContainer: {
+    marginBottom: 10,
+  },
+  slopeText: {
+    fontSize: fonts[20],
+  },
+  toolContainer: {
+    display: 'flex',
+    height: hp(70),
+    width: wp(7),
+    borderBottomLeftRadius: 9,
+    borderBottomRightRadius: 9,
+    borderWidth: 4,
+    borderColor: colors.grey,
+    alignItems: 'center',
+    shadowColor: colors.black,
+    shadowOffset: { width: 10, height: 10 },
+    shadowOpacity: 1,
+    shadowRadius: 8,
+  },
+  toolHeader: {
+    height: hp(4.1),
+    width: wp(7),
+    backgroundColor: colors.red,
+    borderTopRightRadius: 9,
+    borderTopLeftRadius: 9,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1.5,
+  },
+  itemsContainer: {
+    height: hp(10),
+    width: wp(7),
+  },
+  imageView: {
+    flex: 6.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textContainer: {
+    flex: 3.5,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  toolsText: {
+    fontSize: fonts[14],
+  },
+});
+
+export default styles;
