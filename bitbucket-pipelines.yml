@@ -1,0 +1,33 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:10.15.3
+
+pipelines:
+  branches:
+    test:
+    - step:
+          image: node:10.15.3
+          caches:
+            - node
+            - gradle
+          script: # Modify the commands below to build your repository.
+          # install java
+            #build
+            - yarn
+    - step:
+          image: mingc/android-build-box:latest
+          caches:
+            - node
+          script: # Modify the commands below to build your repository.
+          # install java
+            #build
+            - npm install sharp
+            - cd ./android
+            - chmod +x gradlew
+            - ./gradlew assembleRelease
+            - NOW="$(date '+%a%d_%m_%Y_%H_%M')"
+            - mv ./app/build/outputs/apk/release/app-release.apk ./app/build/outputs/apk/release/scikraft_test_${NOW}.apk
+            - curl -X POST "https://${BITBUCKET_USERNAME}:${BITBUCKET_APP_PASSWORD}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./app/build/outputs/apk/release/scikraft_test_${NOW}.apk"
